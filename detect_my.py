@@ -167,7 +167,7 @@ def run(
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
-                    if save_txt
+                    if save_txt:
                     icls = int(cls)
                     if icls == 0 or icls == 1:
                         tl1 = int(cls)
