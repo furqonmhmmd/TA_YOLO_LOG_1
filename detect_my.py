@@ -168,7 +168,7 @@ def run(
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
                     if save_txt:
-                    icls = int(cls)
+                        icls = int(cls)
                     if icls == 0 or icls == 1:
                         tl1 = int(cls)
                         cnf1 = '%.2f' % (conf)
