@@ -172,7 +172,7 @@ def run(
                     if icls == 0 or icls == 1:
                         tl1 = int(cls)
                         cnf1 = '%.2f' % (conf)
-                    if icsl == 2 pr icls == 3:
+                    if icsl == 2 or icls == 3:
                         tl2 = int(cls)
                         cnf2 = '%.2f' % (conf)
                     if icls == 4 or icls == 5 or icls == 6:
