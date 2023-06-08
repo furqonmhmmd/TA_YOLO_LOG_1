@@ -149,8 +149,8 @@ def run(
         if webcam:  # batch_size >= 1
                 p, im0, frame = path[i], im0s[i].copy(), dataset.count
                 s += f'{i}: '
-        else:
-        p, im0, frame = path, im0s.copy(), getattr(dataset, 'frame', 0)
+            else:
+            p, im0, frame = path, im0s.copy(), getattr(dataset, 'frame', 0)
 
             p = Path(p)  # to Path
             save_path = str(save_dir / p.name)  # im.jpg
