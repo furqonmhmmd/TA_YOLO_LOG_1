@@ -130,7 +130,7 @@ def run(
             if len(im.shape) == 3:
                 im = im[None]  # expand for batch dim
     t0 = time.time()
-    img = torch.zeros((1, 2, imgsz, imgsz), device=device)
+    img = torch.zeros((1, 3, imgsz, imgsz), device=device)
     _ = model(img.half() if half else img) if device.type != 'cpu' else None
   
         # Inference
