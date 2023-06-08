@@ -133,12 +133,12 @@ def run(
     _ = model(img.half() if half else img) if device.type != 'cpu' else None
   
         # Inference
-        t1 = time_synchronized()
-        visualize = increment_path(save_dir / Path(path).stem, mkdir=True) if visualize else False
-        pred = model(img, augment=opt.augment)[0]
+    t1 = time_synchronized()
+    visualize = increment_path(save_dir / Path(path).stem, mkdir=True) if visualize else False
+    pred = model(img, augment=opt.augment)[0]
         # NMS
-        t2 = time_synchronized()
-        pred = non_max_suppression(pred, opt.conf_thres, opr.iou_thres, classes=opt.classes, agnostic=opt.agnostic_nms)
+    t2 = time_synchronized()
+    pred = non_max_suppression(pred, opt.conf_thres, opr.iou_thres, classes=opt.classes, agnostic=opt.agnostic_nms)
 
         # Second-stage classifier (optional)
         # pred = utils.general.apply_classifier(pred, classifier_model, im, im0s)
