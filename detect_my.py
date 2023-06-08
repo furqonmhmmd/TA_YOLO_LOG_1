@@ -128,13 +128,20 @@ def run(
             im /= 255  # 0 - 255 to 0.0 - 1.0
             if len(im.shape) == 3:
                 im = im[None]  # expand for batch dim
-
+    t0 = time.time()
+    img = torch.zeros((1, 2, imgsz, imgsz), device=device)
+    _ = model(img.half() if half else img) if device.type != 'cpu' else None
+    
         # Inference
+        t1 = time_synchronized()
+        pred = model(img, augment=opt.augment)[0]
         with dt[1]:
             visualize = increment_path(save_dir / Path(path).stem, mkdir=True) if visualize else False
             pred = model(im, augment=augment, visualize=visualize)
 
         # NMS
+        pred = non_max_suppression(pred, opt.conf_thres, opr.iou_thres, classes=opt.classes, agnostic=opt.agnostic_nms)
+        t2 = time_synchronized()
         with dt[2]:
             pred = non_max_suppression(pred, conf_thres, iou_thres, classes, agnostic_nms, max_det=max_det)
 
