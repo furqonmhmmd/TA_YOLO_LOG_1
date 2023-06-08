@@ -169,21 +169,21 @@ def run(
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
                     if save_txt:
                         icls = int(cls)
-                    if icls == 0 or icls == 1:
-                        tl1 = int(cls)
-                        cnf1 = '%.2f' % (conf)
-                    if icsl == 2 or icls == 3:
-                        tl2 = int(cls)
-                        cnf2 = '%.2f' % (conf)
-                    if icls == 4 or icls == 5 or icls == 6:
-                        tl3 = int(cls)
-                        cnf3 = '%.2f' % (conf)
-                    if icls == 7 or icls == 8:
-                        tl4 = int(cls)
-                        cnf4 = '%.2f' % (conf)
-                    if icls == 9 or icls == 10:
-                        tl5 = int(cls)
-                        cnf5 = '%.2f' % (conf)
+                        if icls == 0 or icls == 1:
+                            tl1 = int(cls)
+                            cnf1 = '%.2f' % (conf)
+                        if icsl == 2 or icls == 3:
+                            tl2 = int(cls)
+                            cnf2 = '%.2f' % (conf)
+                        if icls == 4 or icls == 5 or icls == 6:
+                            tl3 = int(cls)
+                            cnf3 = '%.2f' % (conf)
+                        if icls == 7 or icls == 8:
+                            tl4 = int(cls)
+                            cnf4 = '%.2f' % (conf)
+                        if icls == 9 or icls == 10:
+                            tl5 = int(cls)
+                            cnf5 = '%.2f' % (conf)
 
                 with open ('log_file.csv', 'a') as csvfile:
                     csv_writer = DictWriter(csvfile, fieldnames=header, lineterminator='\n', delimiter=',')
