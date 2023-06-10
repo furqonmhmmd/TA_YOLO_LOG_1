@@ -132,13 +132,13 @@ def run(
 
         # Inference
         with dt[1]:
-            t1 = time_synchronized()
+            t1 = time_sync()
             visualize = increment_path(save_dir / Path(path).stem, mkdir=True) if visualize else False
             pred = model(im, augment=augment, visualize=visualize)
 
         # NMS
         with dt[2]:
-            t2 = time_synchronized()
+            t2 = time_sync()
             pred = non_max_suppression(pred, conf_thres, iou_thres, classes, agnostic_nms, max_det=max_det)
 
         # Second-stage classifier (optional)
