@@ -173,6 +173,7 @@ def run(
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
 
                 # Write results
+                tl1 = cnf1 = tl2 = cnf2 = tl3 = cnf3 = tl4 = cnf4 = tl5 = cnf5 = ''
                 for *xyxy, conf, cls in reversed(det):
                     if save_txt:  # Write to file
                         icls = int(cls)
