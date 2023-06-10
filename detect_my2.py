@@ -183,7 +183,7 @@ def run(
                             tl3 = int(cls)
                             cnf3 = '%.2f' % (conf)
                         if icls == 9 or icls == 10:
-                            tl5 int(cls)
+                            tl5 = int(cls)
                             cnf5 = '%.2f' % (conf)
                     with open ('log_file.csv', 'a') as csvfile:
                         csv_writer = DictWriter(csvfile, fieldnames=header, lineterminator='\n', delimiter=',')
