@@ -145,10 +145,10 @@ def run(
             pred = non_max_suppression(pred, conf_thres, iou_thres, classes, agnostic_nms, max_det=max_det)
 
         # Second-stage classifier (optional)
-        classifiy = False
-        if classify:
-            modelc = load_classifier(name='resnet101', n=2)
-            modelc.load_state_dict(torch.load('weights/resnet101.pt', map_loaction=device))
+        # classifiy = False
+        # if classify:
+            # modelc = load_classifier(name='resnet101', n=2)
+            # modelc.load_state_dict(torch.load('weights/resnet101.pt', map_loaction=device))
 
         # Process predictions
         for i, det in enumerate(pred):  # per image
