@@ -121,7 +121,10 @@ def run(
     model.warmup(imgsz=(1 if pt or model.triton else bs, 3, *imgsz))  # warmup
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
     t0 = time.time()
-
+    with open('log_file.csv', 'a') as csvfile:
+        header = ('Frame', 'AutoSteer', 'AutoSteer Confidence', 'Indicator', 'Indicator Confidence', 'ProPilot', 'ProPilot Confidence', 'VID - Lanes Detection Status', 'VID LDS Confidence', 'VID - LDW', 'VID LDW Confidence')
+        csv_writer = DictWriter(csvfile, fieldnames=header, lineterminator='\n', delimiter=',')
+        csv_writer.writeheader()
     for path, im, im0s, vid_cap, s in dataset:
         with dt[0]:
             im = torch.from_numpy(im).to(model.device)
