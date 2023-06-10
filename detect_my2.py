@@ -148,7 +148,7 @@ def run(
         classifiy = False
         if classify:
             modelc = load_classifier(name='resnet101', n=2)
-            modelc.load_state_dict(torch.load('weights/resnet101.pt', map_loaction=device)
+            modelc.load_state_dict(torch.load('weights/resnet101.pt', map_loaction=device))
 
         # Process predictions
         for i, det in enumerate(pred):  # per image
