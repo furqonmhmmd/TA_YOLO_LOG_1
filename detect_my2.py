@@ -185,7 +185,7 @@ def run(
                         if icls == 9 or icls == 10:
                             tl5 int(cls)
                             cnf5 = '%.2f' % (conf)
-                    with open ('log_file.csv, 'a') as csvfile:
+                    with open ('log_file.csv', 'a') as csvfile:
                         csv_writer = DictWriter(csvfile, fieldnames=header, lineterminator='\n', delimiter=',')
                         csv_writer.writerow({'Frame': frame, 'AutoSteer': tl1, 'AutoSteer Confidence': cnf1, 'Indicator': tl2, 'Indicator Confidence': cnf2, 'ProPilot': tl3, 'ProPilot Confidence': cnf3, 'VID - Lanes Detection Status': tl4, 'VID LDS Confidence': cnf4, 'VID - LDW': tl5, 'VID LDW Confidence': cnf5})
                     if save_img or save_crop or view_img:  # Add bbox to image
