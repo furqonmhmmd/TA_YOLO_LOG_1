@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 7
+names: ['Aircraft', 'Baggage Ramp', 'Baggage Truck', 'Fuel Truck', 'GPU', 'Person', 'Ramp']
+
+roboflow:
+  workspace: uqons
+  project: aircraft-apron-objects
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/uqons/aircraft-apron-objects/dataset/2
